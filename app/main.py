@@ -19,6 +19,7 @@ engine = create_engine("postgresql://postgres:Darko123!@db:5432/postgres")
 Session = sessionmaker(bind=engine)
 
 # this is for CI-CD
+#second try
 def recreate_database():
     # Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
