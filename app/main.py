@@ -15,7 +15,7 @@ from app.settings import DATABASE_URL
 # Not intended for production
 
 
-engine = create_engine("postgresql://postgres:Darko123!@localhost:5433/postgres")
+engine = create_engine("postgresql://postgres:Darko123!@db:5432/postgres")
 Session = sessionmaker(bind=engine)
 
 
