@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-app
+  namespace: kiii-project1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-app
+  template:
+    metadata:
+      labels:
+        app: fastapi-app
+    spec:
+      containers:
+        - name: fastapi
+          image: darkopavikevik12/fastapi:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:Darko123!@postgres.kiii-project1.svc.cluster.local:5432/postgres
+          envFrom:
+            - secretRef:
+                name: postgres-secret
