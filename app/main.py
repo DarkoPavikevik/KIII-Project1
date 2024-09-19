@@ -16,7 +16,6 @@ from app.settings import DATABASE_URL
 
 
 engine = create_engine("postgresql://postgres:Darko123!@host.docker.internal:5433/postgres") #promena
-#engine = create_engine("postgresql://postgres:Darko123!@postgres.kiii-project1.svc.cluster.local:5432/postgres")
 Session = sessionmaker(bind=engine)
 
 # this is for CI-CD
